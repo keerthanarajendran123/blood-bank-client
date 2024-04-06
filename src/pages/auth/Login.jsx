@@ -21,13 +21,6 @@ const Login = () => {
               submitBtn={"Login"}
               formType={"login"}
             />
-            <div className="default-credentials">
-              <p>Default credentials for testing:</p>
-              <p>Donar: donar@donar.com | Password: 123456</p>
-              <p>Organisation: org@org.com | Password: 123456</p>
-              <p>Admin: admin@admin.com | Password: 123456</p>
-              <p>Hospital: hospital@hospital.com | Password: 123456</p>
-            </div>
           </div>
         </div>
       )}

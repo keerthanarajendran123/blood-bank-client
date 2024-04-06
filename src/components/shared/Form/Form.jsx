@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputType from "./InputType";
 import { Link } from "react-router-dom";
 import { handleLogin, handleRegister } from "../../../services/authService";
@@ -13,6 +13,35 @@ const Form = ({ formType, submitBtn, formTitle }) => {
   const [website, setWebsite] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+
+  const setDefaultCredentials = (selectedRole) => {
+    switch (selectedRole) {
+      case "donar":
+        setEmail("donar@donar.com");
+        setPassword("123456");
+        break;
+      case "organisation":
+        setEmail("org@org.com");
+        setPassword("123456");
+        break;
+      case "admin":
+        setEmail("admin@admin.com");
+        setPassword("123456");
+        break;
+      case "hospital":
+        setEmail("hospital@hospital.com");
+        setPassword("123456");
+        break;
+      default:
+        setEmail("");
+        setPassword("");
+    }
+  };
+
+  useEffect(() => {
+    setDefaultCredentials(role);
+  }, [role]);
+
   return (
     <div>
       <form
