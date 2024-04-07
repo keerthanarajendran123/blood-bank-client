@@ -6,7 +6,7 @@ export const userLogin = createAsyncThunk(
   "auth/login",
   async ({ role, email, password }, { rejectWithValue }) => {
     try {
-      const { data } = await API.post("/auth/login", { role, email, password });
+      const { data } = await API.post("api/v1/auth/login", { role, email, password });
       
       if (data.success) {
         alert(data.message);
@@ -42,7 +42,7 @@ export const userRegister = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await API.post("/auth/register", {
+      const { data } = await API.post("api/v1/auth/register", {
         name,
         role,
         email,
@@ -74,7 +74,7 @@ export const getCurrentUser = createAsyncThunk(
   "auth/getCurrentUser",
   async ({ rejectWithValue }) => {
     try {
-      const res = await API.get("/auth/current-user");
+      const res = await API.get("api/v1/auth/current-user");
       if (res.data) {
         return res?.data;
       }

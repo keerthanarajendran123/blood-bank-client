@@ -15,7 +15,7 @@ const Modal = () => {
       if (!bloodGroup || !quantity) {
         return alert("Please Provide All Fields");
       }
-      const { data } = await API.post("/inventory/create-inventory", {
+      const { data } = await API.post("api/v1/inventory/create-inventory", {
         email,
         organisation: user?._id,
         inventoryType,

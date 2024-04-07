@@ -10,7 +10,7 @@ const Donation = () => {
   
   const getDonars = async () => {
     try {
-      const { data } = await API.post("/inventory/get-inventory-hospital", {
+      const { data } = await API.post("api/v1/inventory/get-inventory-hospital", {
         filters: {
           inventoryType: "in",
           donar: user?._id,

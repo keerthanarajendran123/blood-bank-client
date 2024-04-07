@@ -8,7 +8,7 @@ const DonarList = () => {
   
   const getDonars = async () => {
     try {
-      const { data } = await API.get("/admin/donar-list");
+      const { data } = await API.get("api/v1/admin/donar-list");
       //   console.log(data);
       if (data?.success) {
         setData(data?.donarData);
@@ -30,7 +30,7 @@ const DonarList = () => {
         "Sure"
       );
       if (!answer) return;
-      const { data } = await API.delete(`/admin/delete-donar/${id}`);
+      const { data } = await API.delete(`api/v1/admin/delete-donar/${id}`);
       alert(data?.message);
       window.location.reload();
     } catch (error) {
